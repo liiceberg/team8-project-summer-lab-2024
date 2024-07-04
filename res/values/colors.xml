@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="accent_color_cookup">#FFC0A0</color>
+    <color name="primary_color_cookup">#FFDED0</color>
+    <color name="back_color_cookup">#FBFEF9</color>
+    <color name="dark_color_cookup">#3F3F3F</color>
+</resources>
