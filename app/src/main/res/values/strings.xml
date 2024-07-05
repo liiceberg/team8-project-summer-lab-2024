@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">CookUp</string>
+  
     <string name="clear">clear</string>
+
+    <string name="input_ingredients">Введите ингредиенты</string>
+    <string name="add">Добавить</string>
+    <string name="cook">Приготовить</string>
+    <string name="search_recipe">Найти рецепт</string>
+    <string name="recipes">Рецепты</string>
 </resources>
