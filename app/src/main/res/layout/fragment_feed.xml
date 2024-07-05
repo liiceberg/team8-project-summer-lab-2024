@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/materialToolbar"
         tools:itemCount="10"
-        tools:listitem="@layout/item_recipe"/>
+        tools:listitem="@layout/item_recipe_feed"/>
 
 
 
