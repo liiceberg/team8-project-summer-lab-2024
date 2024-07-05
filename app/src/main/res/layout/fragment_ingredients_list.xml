@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".IngredientsListFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/top_app_bar_menu"
@@ -49,7 +49,7 @@
         android:textColor="@color/dark_color_cookup" />
 
     <ListView
-        android:id="@+id/idLVLanguages"
+        android:id="@+id/idLVIngredients"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/idEdtItemName" />
