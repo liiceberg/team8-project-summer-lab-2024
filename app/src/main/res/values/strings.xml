@@ -1,4 +1,13 @@
 <resources>
+    <string name="app_name" translatable="false">CookUp</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="titleFeed">Recipes</string>
+    <string name="AddRecipe">Add</string>
+    <string name="search">Search</string>
+    <string name="photo_of_eat">Photo of eat</string>
+    <string name="recipe_name">Pepperoni pizza</string>
+    <string name="recipe_description_placeholder">Quick and delicious homemade pizza, better than Dodo and other pizzerias!</string>
+    <string name="arrow_right">arrow right</string>
     <string name="app_name">CookUp</string>
   
     <string name="clear">clear</string>
