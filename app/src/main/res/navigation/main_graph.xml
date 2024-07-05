@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/productListFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.ProductListFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.ProductList.ProductListFragment"
         android:label="ProductListFragment" />
 
     <fragment
