@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" />
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.ProductListFragment"
+        android:label="ProductListFragment" />
+
+    <fragment
+        android:id="@+id/recipeInfoFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.RecipeInfoFragment"
+        android:label="RecipeInfoFragment" />
+
+    <fragment
+        android:id="@+id/recipeListFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.RecipeListFragment"/>
+
+    <fragment
+        android:id="@+id/ingredientsListFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.IngredientsListFragment"/>
+</navigation>

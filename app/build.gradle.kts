@@ -34,6 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         viewBinding = true
     }
@@ -48,4 +49,11 @@ dependencies {
     val glideVersion = "4.16.0"
     implementation("com.github.bumptech.glide:glide:$glideVersion")
     ksp("com.github.bumptech.glide:ksp:$glideVersion")
+    
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+
+    val nav_version = "2.7.7"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    
 }
