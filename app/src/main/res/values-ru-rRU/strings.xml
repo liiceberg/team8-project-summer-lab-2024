@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titleFeed">Рецепты</string>
+    <string name="AddRecipe">Добавить</string>
+    <string name="search">Поиск</string>
+    <string name="photo_of_eat">Фото еды</string>
+    <string name="recipe_name">Пицца пепперони</string>
+    <string name="recipe_description_placeholder">Быстрая и вкусная пицца своими руками, лучше чем в Додо и других пиццериях!</string>
+    <string name="arrow_right">Стрелка вправо</string>
+</resources>
