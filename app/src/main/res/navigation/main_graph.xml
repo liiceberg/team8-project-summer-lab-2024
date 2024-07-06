@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.FeedFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" />
 

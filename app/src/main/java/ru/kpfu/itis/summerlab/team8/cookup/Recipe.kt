@@ -1,6 +1,6 @@
 package ru.kpfu.itis.summerlab.team8.cookup
 
-data class Recipe(
+data class Recipe (
     val id: Long,
     val name: String,
     val urlImage: String,

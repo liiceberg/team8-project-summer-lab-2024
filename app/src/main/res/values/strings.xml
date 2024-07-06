@@ -6,14 +6,14 @@
     <string name="recipe_name">Pepperoni pizza</string>
     <string name="recipe_description_placeholder">Quick and delicious homemade pizza, better than Dodo and other pizzerias!</string>
     <string name="arrow_right">arrow right</string>
-    <string name="app_name">CookUp</string>
     <string name="clear">clear</string>
+    <string name="input_ingredients">Input ingredients</string>
+    <string name="add">Add</string>
+    <string name="cook">Cook</string>
+    <string name="search_recipe">FInd recipe</string>
+    <string name="recipes">Recipes</string>
+    <string name="app_name">CookUp</string>
 
-    <string name="input_ingredients">Введите ингредиенты</string>
-    <string name="add">add</string>
-    <string name="cook">Приготовить</string>
-    <string name="search_recipe">Найти рецепт</string>
-    <string name="recipes">Рецепты</string>
     <string name="favorites">Favorites</string>
     <string name="product_list">Product list</string>
     <string name="ingredients">Ingredients</string>
