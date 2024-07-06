@@ -8,10 +8,8 @@ class ProductHolder(
     private val binding : ItemProductBinding,
 ) : ViewHolder(binding.root) {
 
-    fun onBind(product: String){
+    init {
         binding.apply {
-            checkbox.text = product
-
             checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
                 if(isChecked){
                     buttonView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
@@ -19,6 +17,12 @@ class ProductHolder(
                     buttonView.paintFlags = 0
                 }
             }
+        }
+    }
+
+    fun onBind(product: String){
+        binding.apply {
+            checkbox.text = product
         }
     }
 }

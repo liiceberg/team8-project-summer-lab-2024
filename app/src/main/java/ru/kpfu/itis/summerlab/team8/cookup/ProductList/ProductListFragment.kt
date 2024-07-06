@@ -22,7 +22,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
         binding?.apply {
             toolBar.setOnMenuItemClickListener {
                 ProductsRepository.products.clear()
-                initAdapter()
+                rvProductList.adapter?.notifyDataSetChanged()
                 false
             }
 
@@ -36,7 +36,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
                         val product = productName.editText?.text.toString()
                         ProductsRepository.products.add(product)
                         bottomSheetDialog.dismiss()
-                        initAdapter()
+                        rvProductList.adapter?.notifyDataSetChanged()
                     }
                 }
 
