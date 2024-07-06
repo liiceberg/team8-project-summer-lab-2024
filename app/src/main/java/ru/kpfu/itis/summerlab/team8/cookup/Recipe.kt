@@ -7,5 +7,5 @@ data class Recipe (
     val description: String,
     val recipe: String,
     val listOfIngredients: Set<String>,
-    val instructions: String
+    val instructions: String = ""
 )
