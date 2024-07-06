@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">CookUp</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="titleFeed">Recipes</string>
     <string name="AddRecipe">Add</string>
     <string name="search">Search</string>
@@ -14,4 +12,11 @@
     <string name="cook">Cook</string>
     <string name="search_recipe">FInd recipe</string>
     <string name="recipes">Recipes</string>
+    <string name="app_name">CookUp</string>
+
+    <string name="favorites">Favorites</string>
+    <string name="product_list">Product list</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
+    <string name="product_list_hint">write product</string>
 </resources>
