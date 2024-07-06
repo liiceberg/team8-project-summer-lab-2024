@@ -1,10 +1,13 @@
 package ru.kpfu.itis.summerlab.team8.cookup
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentIngredientsListBinding
 
 class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
@@ -18,11 +21,10 @@ class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
         binding = FragmentIngredientsListBinding.bind(view)
 
         ingredientsLV = binding!!.idLVIngredients
-        ingList = ArrayList<String>()
+        ingList = ArrayList()
 
         val adapter: ArrayAdapter<String?> = ArrayAdapter<String?>(
             requireContext(),
-            //this@IngredientsListFragment
             android.R.layout.simple_list_item_1,
             ingList as List<String?>
         )
@@ -37,13 +39,23 @@ class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
                 if (item.isNotEmpty()) {
                     ingList.add(item)
                     adapter.notifyDataSetChanged()
+                    idEdtItemName.setText("")
                 }
             }
 
-            fab.setOnClickListener {
-                //Open fragment with ListOfRecipes
+            val bundle = Bundle()
+            bundle.apply {
+                bundle.putStringArrayList("list", ingList);
+            }
+
+            fabSearch.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_ingredientsListFragment_to_recipeListFragment,
+                    bundle
+                )
             }
 
         }
     }
+
 }

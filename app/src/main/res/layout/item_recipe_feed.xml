@@ -10,8 +10,7 @@
     android:layout_marginBottom="2dp"
     app:cardBackgroundColor="@color/back_color_cookup"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
-    >
+    app:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,7 +57,6 @@
             android:src="@drawable/baseline_arrow_right_24" />
 
     </LinearLayout>
-
 
 
 </com.google.android.material.card.MaterialCardView>

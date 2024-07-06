@@ -3,10 +3,11 @@ package ru.kpfu.itis.summerlab.team8.cookup
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentRecipeListBinding
+
 
 class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
 
@@ -26,17 +27,41 @@ class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
     }
 
     private fun initAdapter() {
-
         binding?.run {
+            val list = arguments?.getStringArrayList("list")?.toSet()
             adapter = RecipeAdapter(
-                list = RecipeRepository.recipes,
+                list = searchRecipe(list),
                 glide = Glide.with(this@RecipeListFragment),
                 onClick = {
-                    Snackbar.make(root, it.name, Snackbar.LENGTH_SHORT).show()
+                    val bundle = Bundle()
+                    bundle.apply {
+                        bundle.putLong("id", it.id);
+                    }
+                    findNavController().navigate(
+                        R.id.action_recipeListFragment_to_recipeInfoFragment,
+                        bundle
+                    )
+
                 }
             )
             rvRecipe.adapter = adapter
             rvRecipe.layoutManager = GridLayoutManager(requireContext(), 2)
+
+            topAppBarMenu.setNavigationOnClickListener {
+                findNavController().navigateUp()
+            }
+
         }
     }
+
+    private fun searchRecipe(list: Set<String>?): List<Recipe> {
+        val ans = ArrayList<Recipe>()
+        for (item in RecipeRepository.recipes) {
+            if (item.listOfIngredients == list) {
+                ans.add(item)
+            }
+        }
+        return ans
+    }
+
 }
