@@ -1,5 +1,4 @@
 <resources>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="titleFeed">Recipes</string>
     <string name="AddRecipe">Add</string>
     <string name="search">Search</string>
@@ -11,7 +10,7 @@
     <string name="clear">clear</string>
 
     <string name="input_ingredients">Введите ингредиенты</string>
-    <string name="add">Добавить</string>
+    <string name="add">add</string>
     <string name="cook">Приготовить</string>
     <string name="search_recipe">Найти рецепт</string>
     <string name="recipes">Рецепты</string>
@@ -19,4 +18,5 @@
     <string name="product_list">Product list</string>
     <string name="ingredients">Ingredients</string>
     <string name="instructions">Instructions</string>
+    <string name="product_list_hint">write product</string>
 </resources>

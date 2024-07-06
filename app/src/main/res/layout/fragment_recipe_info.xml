@@ -32,7 +32,6 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_back"
         android:layout_width="wrap_content"
