@@ -7,4 +7,10 @@
     <string name="recipe_name">Пицца пепперони</string>
     <string name="recipe_description_placeholder">Быстрая и вкусная пицца своими руками, лучше чем в Додо и других пиццериях!</string>
     <string name="arrow_right">Стрелка вправо</string>
+    <string name="clear">Очистить</string>
+    <string name="input_ingredients">Вставьте ингредиенты</string>
+    <string name="add">Добавить</string>
+    <string name="cook">Приготовить</string>
+    <string name="search_recipe">"Найти "</string>
+    <string name="recipes">Рецепты</string>
 </resources>
