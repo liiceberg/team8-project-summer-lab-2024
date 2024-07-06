@@ -12,7 +12,7 @@
         android:title="@string/cook" />
 
     <item
-        android:id="@+id/favoritesFragment"
+        android:id="@+id/favoriteRecipesFragment"
         android:icon="@drawable/ic_like_filled"
         android:title="@string/favorites" />
 
