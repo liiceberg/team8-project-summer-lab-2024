@@ -55,5 +55,7 @@ dependencies {
     val nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    val splash_version = "1.0.1"
+    implementation("androidx.core:core-splashscreen:$splash_version")
     
 }
