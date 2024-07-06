@@ -5,7 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentFeedBinding
 
-class FeedFragment : Fragment(R.layout.fragment_feed){
+class FeedFragment : Fragment(R.layout.fragment_feed) {
 
     private var binding: FragmentFeedBinding? = null
 

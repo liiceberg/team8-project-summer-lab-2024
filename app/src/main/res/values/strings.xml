@@ -16,5 +16,7 @@
     <string name="recipes">Рецепты</string>
     <string name="favorites">Favorites</string>
     <string name="product_list">Product list</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
     <string name="product_list_hint">write product</string>
 </resources>
