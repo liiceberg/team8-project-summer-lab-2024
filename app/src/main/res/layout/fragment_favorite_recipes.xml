@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavoriteRecipesFragment">
+    tools:context=".FavoriteList.FavoriteRecipesFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+    <SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:background="@color/primary_color_cookup"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:iconifiedByDefault="false"
+        android:paddingVertical="10dp"
+        android:paddingEnd="32dp"
+        android:queryHint="Поиск рецептов"
+        app:layout_constraintEnd_toStartOf="@+id/rvRecipes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/top_app_bar_favorite"
-        app:title="@string/favorites"
-        app:titleTextColor="@color/dark_color_cookup" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rvRecipes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
-        tools:itemCount="20"
-        tools:listitem="@layout/item_product" />
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_recipe_feed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

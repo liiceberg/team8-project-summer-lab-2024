@@ -7,7 +7,6 @@ object RecipeRepository {
             name = "Carbonara",
             urlImage = "https://media.leverans.ru/product_images_inactive/novosibirsk/beerman/7f35f4a7349215e9570f73423328e0c0.jpg",
             description = "52! Да Здравствует Санкт-Петербург",
-            recipe = "sdf",
             listOfIngredients = hashSetOf("tomato", "juice"),
             instructions = "With your feet on the air and your head on the ground\n" +
                     "Try this trick and spin it, yeah (Yeah)\n" +
@@ -29,25 +28,26 @@ object RecipeRepository {
                     "Where is my mind?\n" +
                     "Where is my mind?\n" +
                     "Way out in the water\n" +
-                    "See it swimming"
+                    "See it swimming",
+            favorite = false,
         ),
         Recipe(
             id = 1,
             name = "Caesar",
             urlImage = "https://avatars.mds.yandex.net/get-entity_search/117753/846435852/S600xU_2x",
             description = "Самый лучший салат в домашней столовой",
-            recipe = "Яйцааааааааа и сыр",
             listOfIngredients = hashSetOf("egg", "cheese"),
-            instructions = "Шо здесь думать? Берешь и готовишь!"
+            instructions = "Шо здесь думать? Берешь и готовишь!",
+            favorite = false
         ),
         Recipe(
             id = 2,
             name = "Caesar",
             urlImage = "",
             description = "asd",
-            recipe = "asd",
             listOfIngredients = hashSetOf("egg", "cheese"),
-            instructions = "asd"
+            instructions = "asd",
+            favorite = false
         ),
     )
 }
