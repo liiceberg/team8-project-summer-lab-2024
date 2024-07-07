@@ -20,7 +20,7 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
             if (recipe != null) {
                 title.text = recipe.name
                 description.text = recipe.description
-                ingredients.text = convertSetToString(recipe.listOfIngredients)
+                ingredients.text = recipe.ingredients.split(",").joinToString("\n")
                 instructions.text = recipe.instructions
                 Glide.with(view)
                     .load(recipe.urlImage)
@@ -53,13 +53,5 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
             }
 
         }
-    }
-
-    private fun convertSetToString(list: Set<String>): String {
-        val ans = StringBuilder()
-        for (item in list) {
-            ans.append(item + "\n")
-        }
-        return ans.toString()
     }
 }
