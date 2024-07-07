@@ -42,7 +42,7 @@ class NewRecipeFragment : Fragment(R.layout.fragment_new_recipe) {
                 val word = editText.text.toString()
                 if (word.isNotEmpty()) {
                     wordList.add(word)
-                    wordAdapter?.notifyDataSetChanged()
+                    wordAdapter?.notifyItemChanged(wordList.size-1)
                     editText.setText("")
                 }
             }

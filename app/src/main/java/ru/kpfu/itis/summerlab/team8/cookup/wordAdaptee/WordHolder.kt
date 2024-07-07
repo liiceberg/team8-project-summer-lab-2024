@@ -7,12 +7,9 @@ class WordHolder(
     private val binding : ItemWordBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
-
-    var wordTextView = binding.itemWord
-
     fun onBind(word: String){
         binding.apply {
-            wordTextView.text = word
+            itemWord.text = word
         }
     }
 }
