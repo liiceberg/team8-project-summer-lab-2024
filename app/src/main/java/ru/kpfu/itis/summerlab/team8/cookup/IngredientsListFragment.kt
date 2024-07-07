@@ -37,7 +37,7 @@ class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
                 val item = idEdtItemName.text.toString()
 
                 if (item.isNotEmpty()) {
-                    ingList.add(item)
+                    ingList.add(item.trim())
                     adapter.notifyDataSetChanged()
                     idEdtItemName.setText("")
                 }
