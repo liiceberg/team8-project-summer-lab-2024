@@ -10,6 +10,6 @@ data class Recipe (
     val urlImage: String,
     val description: String,
     val ingredients : String,
-    val isFavourite: Boolean,
+    var isFavourite: Boolean,
     val instructions: String = ""
 )
