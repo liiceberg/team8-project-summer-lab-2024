@@ -4,7 +4,6 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.RequestManager
 import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.Recipe
-import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeBinding
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeFeedBinding
 
 class FavoriteHolder(

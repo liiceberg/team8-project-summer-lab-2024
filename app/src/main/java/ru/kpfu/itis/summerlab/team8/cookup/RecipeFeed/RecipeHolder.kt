@@ -19,12 +19,4 @@ class RecipeHolder(
         }
     }
 
-    fun bind(recipe: Recipe) {
-        binding.run {
-            textViewTitle.text = recipe.name
-            textViewDescription.text = recipe.description
-            glide.load(recipe.urlImage).into(imageViewRecipe)
-            root.setOnClickListener { click(recipe.id) }
-        }
-    }
 }

@@ -5,15 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.SearchView
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.Recipe
-import ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed.RecipeAdapter
-import ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed.RecipeRepository
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentFavoriteRecipesBinding
-import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentFeedBinding
 
 class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
 
@@ -55,7 +51,6 @@ class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
 
     private fun initAdapter() {
         binding?.run {
-            val list = arguments?.getStringArrayList("list")?.toSet()
             adapter = FavoriteAdapter(
                 list = ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.favorite },
                 glide = Glide.with(this@FavoriteRecipesFragment),
