@@ -13,7 +13,9 @@
     <string name="search_recipe">FInd recipe</string>
     <string name="recipes">Recipes</string>
     <string name="app_name">CookUp</string>
-
+    <string name="name_of_recipe">name of recipe</string>
+    <string name="description_of_recipe">description of recipe</string>
+    <string name="instructions_of_recipe">instructions of recipe</string>
     <string name="favorites">Favorites</string>
     <string name="product_list">Product list</string>
     <string name="ingredients">Ingredients</string>

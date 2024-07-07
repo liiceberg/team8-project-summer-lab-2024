@@ -1,5 +1,4 @@
 package ru.kpfu.itis.summerlab.team8.cookup
-
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -10,6 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import kotlinx.coroutines.launch
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.ActivityMainBinding
 import ru.kpfu.itis.summerlab.team8.cookup.di.ServiceLocator
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +36,5 @@ class MainActivity : AppCompatActivity() {
         viewBinding?.apply {
             bottomNavigation.setupWithNavController(controller!!)
         }
-
     }
 }
