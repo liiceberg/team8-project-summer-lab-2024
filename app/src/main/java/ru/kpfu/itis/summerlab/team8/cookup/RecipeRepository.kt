@@ -8,7 +8,7 @@ object RecipeRepository {
             urlImage = "https://media.leverans.ru/product_images_inactive/novosibirsk/beerman/7f35f4a7349215e9570f73423328e0c0.jpg",
             description = "52! Да Здравствует Санкт-Петербург",
             ingredients = "tomato, juice",
-            isFavourite = true,
+            isFavourite = false,
             instructions = "With your feet on the air and your head on the ground\n" +
                     "Try this trick and spin it, yeah (Yeah)\n" +
                     "Your head will collapse if there's nothing in it\n" +

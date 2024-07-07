@@ -13,33 +13,37 @@ import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentIngredientsListBi
 class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
 
     private var binding: FragmentIngredientsListBinding? = null
-    private lateinit var ingredientsLV: ListView
+
     private lateinit var ingList: ArrayList<String>
+    private var isTextViewExpanded = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentIngredientsListBinding.bind(view)
 
-        ingredientsLV = binding!!.idLVIngredients
         ingList = ArrayList()
 
-        val adapter: ArrayAdapter<String?> = ArrayAdapter<String?>(
-            requireContext(),
-            android.R.layout.simple_list_item_1,
-            ingList as List<String?>
-        )
-
-        ingredientsLV.adapter = adapter
-
         binding?.run {
-            idBtnAdd.setOnClickListener {
 
-                val item = idEdtItemName.text.toString()
+            addButton.setOnClickListener {
+                val item = inputTextView.text.toString()
 
-                if (item.isNotEmpty()) {
+                if(item.isNotEmpty()) {
                     ingList.add(item)
-                    adapter.notifyDataSetChanged()
-                    idEdtItemName.setText("")
+                    expandableTextView.text = "${expandableTextView.text}-${inputTextView.text}\n"
+                    inputTextView.setText("")
+                }
+            }
+
+            expandableTextView.setOnClickListener {
+                if (isTextViewExpanded) {
+                    // Collapse the TextView
+                    expandableTextView.maxLines = 1
+                    isTextViewExpanded = false
+                } else {
+                    // Expand the TextView
+                    expandableTextView.maxLines = Integer.MAX_VALUE
+                    isTextViewExpanded = true
                 }
             }
 
@@ -47,13 +51,15 @@ class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
             bundle.apply {
                 bundle.putStringArrayList("list", ingList);
             }
-
+            println(ingList)
             fabSearch.setOnClickListener {
+
                 findNavController().navigate(
                     R.id.action_ingredientsListFragment_to_recipeListFragment,
                     bundle
                 )
             }
+
 
         }
     }

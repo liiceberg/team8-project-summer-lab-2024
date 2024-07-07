@@ -30,7 +30,7 @@ class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
         binding?.run {
             val list = arguments?.getStringArrayList("list")?.toSet()
             adapter = RecipeAdapter(
-                list = searchRecipe(list),
+                list = searchRecipe(list!!),
                 glide = Glide.with(this@RecipeListFragment),
                 onClick = {
                     val bundle = Bundle()
@@ -54,15 +54,8 @@ class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
         }
     }
 
-    private fun searchRecipe(list: Set<String>?): List<Recipe> {
-        val ans = ArrayList<Recipe>()
-        for (item in RecipeRepository.recipes) {
-            val ingredients = item.ingredients.split(",").toSet()
-            if (ingredients == list) {
-                ans.add(item)
-            }
-        }
-        return ans
-    }
+    private fun searchRecipe(list: Set<String>?): List<Recipe> =
+        RecipeRepository.recipes
+            .filter { list!!.intersect(it.ingredients.split(",").toSet()).isNotEmpty() }
 
 }
