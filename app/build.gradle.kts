@@ -57,5 +57,11 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     val splash_version = "1.0.1"
     implementation("androidx.core:core-splashscreen:$splash_version")
+
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
     
 }

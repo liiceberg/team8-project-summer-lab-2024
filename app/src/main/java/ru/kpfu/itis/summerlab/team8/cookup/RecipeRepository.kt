@@ -1,14 +1,14 @@
 package ru.kpfu.itis.summerlab.team8.cookup
 
 object RecipeRepository {
-    val recipes: List<Recipe> = listOf(
+    var recipes: List<Recipe> = listOf(
         Recipe(
             id = 0,
             name = "Carbonara",
             urlImage = "https://media.leverans.ru/product_images_inactive/novosibirsk/beerman/7f35f4a7349215e9570f73423328e0c0.jpg",
             description = "52! Да Здравствует Санкт-Петербург",
-            recipe = "sdf",
-            listOfIngredients = hashSetOf("tomato", "juice"),
+            ingredients = "tomato, juice",
+            isFavourite = true,
             instructions = "With your feet on the air and your head on the ground\n" +
                     "Try this trick and spin it, yeah (Yeah)\n" +
                     "Your head will collapse if there's nothing in it\n" +
@@ -36,8 +36,8 @@ object RecipeRepository {
             name = "Caesar",
             urlImage = "https://avatars.mds.yandex.net/get-entity_search/117753/846435852/S600xU_2x",
             description = "Самый лучший салат в домашней столовой",
-            recipe = "Яйцааааааааа и сыр",
-            listOfIngredients = hashSetOf("egg", "cheese"),
+            ingredients = "egg, cheese",
+            isFavourite = false,
             instructions = "Шо здесь думать? Берешь и готовишь!"
         ),
         Recipe(
@@ -45,8 +45,8 @@ object RecipeRepository {
             name = "Caesar",
             urlImage = "",
             description = "asd",
-            recipe = "asd",
-            listOfIngredients = hashSetOf("egg", "cheese"),
+            ingredients = "egg, cheese",
+            isFavourite = false,
             instructions = "asd"
         ),
     )
