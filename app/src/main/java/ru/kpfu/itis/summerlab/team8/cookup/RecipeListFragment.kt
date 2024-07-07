@@ -53,7 +53,7 @@ class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
 
         }
     }
-
+    
     private fun searchRecipe(list: Set<String>?): List<Recipe> =
         RecipeRepository.recipes
             .filter { list!!.intersect(it.ingredients.split(",").toSet()).isNotEmpty() }
