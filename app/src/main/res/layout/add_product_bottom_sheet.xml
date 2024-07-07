@@ -15,8 +15,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        app:hintTextColor="@color/dark_color_cookup"
         app:boxStrokeColor="@color/dark_color_cookup"
+        app:hintTextColor="@color/dark_color_cookup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

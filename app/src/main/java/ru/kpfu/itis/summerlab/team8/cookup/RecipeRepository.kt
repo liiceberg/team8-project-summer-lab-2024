@@ -29,7 +29,7 @@ object RecipeRepository {
                     "Where is my mind?\n" +
                     "Where is my mind?\n" +
                     "Way out in the water\n" +
-                    "See it swimming"
+                    "See it swimming",
         ),
         Recipe(
             id = 1,

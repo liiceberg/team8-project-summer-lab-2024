@@ -1,30 +1,31 @@
-package ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed
+package ru.kpfu.itis.summerlab.team8.cookup.FavoriteList
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.SearchView
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.Recipe
-import ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository
-import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentFeedBinding
+import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentFavoriteRecipesBinding
 
+class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
 
-class FeedFragment : Fragment(R.layout.fragment_feed) {
-
-    private lateinit var allRecipes: List<Recipe>
-
-    private var binding: FragmentFeedBinding? = null
-    private var adapter: RecipeAdapter? = null
-
+    private lateinit var binding: FragmentFavoriteRecipesBinding
+    private var adapter: FavoriteAdapter? = null
+    private lateinit var favoriteRecipes: List<Recipe>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentFeedBinding.bind(view)
+        binding = FragmentFavoriteRecipesBinding.bind(view)
+
         initAdapter()
-        allRecipes = RecipeRepository.recipes
+
+        favoriteRecipes =
+            ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.favorite }
+
         binding?.run {
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
@@ -41,29 +42,35 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
         }
     }
 
-
     private fun performSearch(query: String) {
-        val filteredRecipes = allRecipes.filter { recipe ->
+        val filteredRecipes = favoriteRecipes.filter { recipe ->
             recipe.name.contains(query, ignoreCase = true)
         }
         adapter?.updateData(filteredRecipes)
     }
 
-
     private fun initAdapter() {
-        adapter = RecipeAdapter(RecipeRepository.recipes, Glide.with(this)) { id ->
-
-        }
         binding?.run {
+            adapter = FavoriteAdapter(
+                list = ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.favorite },
+                glide = Glide.with(this@FavoriteRecipesFragment),
+                onClick = {
+                    val bundle = Bundle()
+                    bundle.apply {
+                        bundle.putLong("id", it.id);
+                    }
+                    findNavController().navigate(
+                        R.id.action_favoriteRecipesFragment_to_recipeInfoFragment,
+                        bundle
+                    )
+                }
+            )
             rvRecipes.adapter = adapter
             rvRecipes.layoutManager = LinearLayoutManager(requireContext())
         }
-
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding = null
     }
 }

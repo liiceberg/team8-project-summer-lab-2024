@@ -11,7 +11,7 @@ import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentProductListBindin
 
 class ProductListFragment : Fragment(R.layout.fragment_product_list) {
 
-    private var binding : FragmentProductListBinding? = null
+    private var binding: FragmentProductListBinding? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -26,13 +26,13 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
                 false
             }
 
-            fabAdd.setOnClickListener{
+            fabAdd.setOnClickListener {
                 val bottomSheetDialog = BottomSheetDialog(view.context)
                 val dialogBinding = AddProductBottomSheetBinding.inflate(layoutInflater)
                 bottomSheetDialog.setContentView(dialogBinding.root)
 
                 dialogBinding.apply {
-                    addBtn.setOnClickListener{
+                    addBtn.setOnClickListener {
                         val product = productName.editText?.text.toString()
                         ProductsRepository.products.add(product)
                         bottomSheetDialog.dismiss()
@@ -50,14 +50,12 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
         binding = null
     }
 
-    fun initAdapter(){
+    fun initAdapter() {
         binding?.apply {
             rvProductList.adapter = ProductAdapter(
                 list = ProductsRepository.products
             )
             rvProductList.layoutManager = LinearLayoutManager(requireContext())
-
-
         }
     }
 }

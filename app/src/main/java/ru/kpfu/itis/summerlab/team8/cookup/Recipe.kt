@@ -1,7 +1,6 @@
 package ru.kpfu.itis.summerlab.team8.cookup
 
 import androidx.room.Entity
-import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity
