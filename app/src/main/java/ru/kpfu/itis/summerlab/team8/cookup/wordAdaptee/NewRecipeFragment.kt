@@ -8,6 +8,7 @@ import android.provider.MediaStore
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentNewRecipeBinding
@@ -59,7 +60,12 @@ class NewRecipeFragment : Fragment(R.layout.fragment_new_recipe) {
         binding?.run {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = wordAdapter }
+            recyclerView.adapter = wordAdapter
+
+            newRecipeToolbar.setNavigationOnClickListener {
+                findNavController().navigateUp()
+            }
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()

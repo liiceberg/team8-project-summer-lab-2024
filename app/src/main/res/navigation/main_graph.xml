@@ -9,7 +9,14 @@
         android:id="@+id/feedFragment"
         android:name="ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed.FeedFragment"
         android:label="fragment_feed"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_recipeInfoFragment"
+            app:destination="@id/recipeInfoFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/productListFragment"
@@ -45,4 +52,8 @@
             android:id="@+id/action_favoriteRecipesFragment_to_recipeInfoFragment"
             app:destination="@id/recipeInfoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/newRecipeFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.wordAdaptee.NewRecipeFragment"
+        android:label="NewRecipeFragment" />
 </navigation>
