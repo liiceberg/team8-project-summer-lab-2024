@@ -24,7 +24,7 @@ class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
         initAdapter()
 
         favoriteRecipes =
-            ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.favorite }
+            ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.isFavourite }
 
         binding?.run {
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -52,7 +52,7 @@ class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
     private fun initAdapter() {
         binding?.run {
             adapter = FavoriteAdapter(
-                list = ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.favorite },
+                list = ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.isFavourite },
                 glide = Glide.with(this@FavoriteRecipesFragment),
                 onClick = {
                     val bundle = Bundle()

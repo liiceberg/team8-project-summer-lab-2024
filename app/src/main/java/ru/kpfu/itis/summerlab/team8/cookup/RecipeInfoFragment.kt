@@ -30,7 +30,7 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
                 println(id)
             }
 
-            if(recipe?.favorite == true) {
+            if(recipe?.isFavourite == true) {
                 fabLike.setImageResource(R.drawable.ic_like_filled)
             } else {
                 fabLike.setImageResource(R.drawable.ic_like)
@@ -41,13 +41,13 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
             }
 
             fabLike.setOnClickListener {
-                if(recipe?.favorite == true) {
+                if(recipe?.isFavourite == true) {
                     fabLike.setImageResource(R.drawable.ic_like)
-                    recipe.favorite = false
+                    recipe.isFavourite = false
                     Snackbar.make(view, "${recipe?.name} deleted from favorite", Snackbar.LENGTH_SHORT).show()
                 } else {
                     fabLike.setImageResource(R.drawable.ic_like_filled)
-                    recipe?.favorite = true
+                    recipe?.isFavourite = true
                     Snackbar.make(view, "${recipe?.name} added to favorite", Snackbar.LENGTH_SHORT).show()
                 }
             }
