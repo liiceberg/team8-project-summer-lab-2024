@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import ru.kpfu.itis.summerlab.team8.cookup.R
@@ -51,12 +52,17 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
 
 
     private fun initAdapter() {
-        adapter = RecipeAdapter(RecipeRepository.recipes, Glide.with(this)) { id ->
-
-        }
+        adapter = RecipeAdapter(RecipeRepository.recipes, Glide.with(this), click = {
+            id -> var bundle = Bundle()
+            bundle.putLong("id",id)
+            findNavController().navigate(resId = R.id.action_feedFragment_to_recipeInfoFragment, args = bundle)
+        })
         binding?.run {
             rvRecipes.adapter = adapter
             rvRecipes.layoutManager = LinearLayoutManager(requireContext())
+            fabAdd.setOnClickListener{
+                findNavController().navigate(resId = R.id.action_feedFragment_to_newRecipeFragment)
+            }
         }
 
     }
