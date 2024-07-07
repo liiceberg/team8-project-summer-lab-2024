@@ -25,7 +25,7 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
         initAdapter()
         allRecipes = RecipeRepository.getAllRecipes()
         binding?.run {
-            searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     query?.let { performSearch(it) }
                     return true
@@ -39,7 +39,6 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
             })
         }
     }
-
 
 
     private fun performSearch(query: String) {
@@ -60,8 +59,6 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
         }
 
     }
-
-
 
 
     override fun onDestroyView() {

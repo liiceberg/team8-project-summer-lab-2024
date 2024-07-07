@@ -1,7 +1,7 @@
 package ru.kpfu.itis.summerlab.team8.cookup.ProductList
 
 object ProductsRepository {
-    var products : MutableList<String> = mutableListOf(
+    var products: MutableList<String> = mutableListOf(
         "яблоки",
         "бананы",
         "апельсины",

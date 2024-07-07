@@ -38,7 +38,11 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteRecipesFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.FavoriteRecipesFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.FavoriteList.FavoriteRecipesFragment"
         android:label="fragment_favorite_recipes"
-        tools:layout="@layout/fragment_favorite_recipes" />
+        tools:layout="@layout/fragment_favorite_recipes">
+        <action
+            android:id="@+id/action_favoriteRecipesFragment_to_recipeInfoFragment"
+            app:destination="@id/recipeInfoFragment" />
+    </fragment>
 </navigation>

@@ -5,11 +5,11 @@ import com.bumptech.glide.RequestManager
 import ru.kpfu.itis.summerlab.team8.cookup.Recipe
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeFeedBinding
 
-class RecipeHolder (
+class RecipeHolder(
     private val glide: RequestManager,
     private val binding: ItemRecipeFeedBinding,
     private val click: (Long) -> Unit
-): RecyclerView.ViewHolder(binding.root) {
+) : RecyclerView.ViewHolder(binding.root) {
     fun onBind(recipe: Recipe) {
         binding.run {
             textViewTitle.text = recipe.name
@@ -18,6 +18,7 @@ class RecipeHolder (
             root.setOnClickListener { click(recipe.id) }
         }
     }
+
     fun bind(recipe: Recipe) {
         binding.run {
             textViewTitle.text = recipe.name
