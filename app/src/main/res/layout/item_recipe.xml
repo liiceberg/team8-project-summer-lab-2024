@@ -21,7 +21,6 @@
             android:id="@+id/cardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="12dp"
             app:cardElevation="8dp"
@@ -46,7 +45,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
             android:textColor="@color/dark_color_cookup"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -54,25 +52,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:text="Carbonara" />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/heart_svgrepo_com__1_"
-            app:layout_constraintStart_toEndOf="@id/cardView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/dark_color_cookup" />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="70dp"
-            android:src="@drawable/add_circle_outline"
-            app:layout_constraintStart_toEndOf="@id/cardView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/dark_color_cookup" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
