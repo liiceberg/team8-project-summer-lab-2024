@@ -16,13 +16,16 @@ class ProductHolder(
                 } else {
                     buttonView.paintFlags = 0
                 }
+
+                ProductsRepository.products.forEach { product -> if (product.name == checkbox.text) product.isChecked = isChecked }
             }
         }
     }
 
-    fun onBind(product: String) {
+    fun onBind(product: Product) {
         binding.apply {
-            checkbox.text = product
+            checkbox.text = product.name
+            checkbox.isChecked = product.isChecked
         }
     }
 }

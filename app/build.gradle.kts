@@ -63,4 +63,7 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
+
+    val csv_version = "1.9.3"
+    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:$csv_version")
 }
