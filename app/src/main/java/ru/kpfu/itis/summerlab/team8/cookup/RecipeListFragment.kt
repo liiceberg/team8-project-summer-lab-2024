@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentRecipeListBinding
 
@@ -45,7 +46,7 @@ class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
                 }
             )
             rvRecipe.adapter = adapter
-            rvRecipe.layoutManager = GridLayoutManager(requireContext(), 2)
+            rvRecipe.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
             topAppBarMenu.setNavigationOnClickListener {
                 findNavController().navigateUp()
