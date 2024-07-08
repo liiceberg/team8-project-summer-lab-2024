@@ -1,11 +1,7 @@
 package ru.kpfu.itis.summerlab.team8.cookup
 
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentIngredientsListBinding
@@ -49,7 +45,7 @@ class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
 
             val bundle = Bundle()
             bundle.apply {
-                bundle.putStringArrayList("list", ingList);
+                bundle.putStringArrayList("list", ingList)
             }
             println(ingList)
             fabSearch.setOnClickListener {
