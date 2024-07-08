@@ -26,4 +26,8 @@ class WordAdapter(
     override fun getItemCount(): Int {
         return wordsList.size
     }
+    fun getCheckedText(): String {
+        val checkedTextList = wordsList.map { it }
+        return checkedTextList.joinToString(separator = ",")
+    }
 }
