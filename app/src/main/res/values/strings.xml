@@ -21,5 +21,6 @@
     <string name="ingredients">Ingredients</string>
     <string name="instructions">Instructions</string>
     <string name="product_list_hint">write product</string>
+    <string name="add_to_products">add to products</string>
     <string name="Create_new_recipe">Создание нового рецепта</string>
 </resources>

@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.coroutines.launch
+import ru.kpfu.itis.summerlab.team8.cookup.ProductList.ProductsRepository
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.ActivityMainBinding
 import ru.kpfu.itis.summerlab.team8.cookup.di.ServiceLocator
 
@@ -22,8 +23,9 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch{
             RecipeRepository.recipes = ServiceLocator.getDbInstance().recipeDao().getAll()
-
         }
+
+        ProductsRepository.setProducts()
 
         installSplashScreen()
 

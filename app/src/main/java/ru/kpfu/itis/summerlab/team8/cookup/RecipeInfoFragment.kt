@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import ru.kpfu.itis.summerlab.team8.cookup.ProductList.Product
+import ru.kpfu.itis.summerlab.team8.cookup.ProductList.ProductsRepository
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentRecipeInfoBinding
 
 class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
@@ -17,6 +19,7 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
         val id = arguments?.getLong("id")
         binding.run {
             val recipe = RecipeRepository.recipes.find { it.id == id }
+
             if (recipe != null) {
                 title.text = recipe.name
                 description.text = recipe.description
@@ -44,12 +47,17 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
                 if(recipe?.isFavourite == true) {
                     fabLike.setImageResource(R.drawable.ic_like)
                     recipe.isFavourite = false
-                    Snackbar.make(view, "${recipe?.name} deleted from favorite", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(view, "${recipe.name} deleted from favorite", Snackbar.LENGTH_SHORT).show()
                 } else {
                     fabLike.setImageResource(R.drawable.ic_like_filled)
                     recipe?.isFavourite = true
                     Snackbar.make(view, "${recipe?.name} added to favorite", Snackbar.LENGTH_SHORT).show()
                 }
+            }
+
+            addToProductsButton.setOnClickListener{
+                ProductsRepository.add(ingredients.text.split("\n").map { product -> Product(product.trim(), false) })
+                Snackbar.make(view, "ingredients added to list", Snackbar.LENGTH_SHORT).show()
             }
 
         }

@@ -14,6 +14,7 @@
         android:buttonTint="@color/accent_color_cookup"
         android:textAlignment="textStart"
         android:textSize="16sp"
+        app:checkedState="unchecked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
