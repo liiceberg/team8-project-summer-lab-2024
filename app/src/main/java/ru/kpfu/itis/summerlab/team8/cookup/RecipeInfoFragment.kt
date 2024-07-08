@@ -23,7 +23,7 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
             if (recipe != null) {
                 title.text = recipe.name
                 description.text = recipe.description
-                ingredients.text = recipe.ingredients.split(",").joinToString("\n").replace(" ", "")
+                ingredients.text = recipe.ingredients.split(",").map { ing -> "-${ing.trim()}" }.joinToString("\n")
                 instructions.text = recipe.instructions
                 Glide.with(view)
                     .load(recipe.urlImage)
