@@ -3,12 +3,15 @@ package ru.kpfu.itis.summerlab.team8.cookup
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.launch
 import ru.kpfu.itis.summerlab.team8.cookup.ProductList.Product
 import ru.kpfu.itis.summerlab.team8.cookup.ProductList.ProductsRepository
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentRecipeInfoBinding
+import ru.kpfu.itis.summerlab.team8.cookup.di.ServiceLocator
 
 class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
     private lateinit var binding: FragmentRecipeInfoBinding
@@ -53,10 +56,14 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
                     recipe?.isFavourite = true
                     Snackbar.make(view, "${recipe?.name} added to favorite", Snackbar.LENGTH_SHORT).show()
                 }
+
+                lifecycleScope.launch {
+                    ServiceLocator.getDbInstance().recipeDao().update(recipe!!)
+                }
             }
 
             addToProductsButton.setOnClickListener{
-                ProductsRepository.add(ingredients.text.split("\n").map { product -> Product(product.trim(), false) })
+                ProductsRepository.add(ingredients.text.split("\n").map { product -> Product(product.replace("-", "").trim(), false) })
                 Snackbar.make(view, "ingredients added to list", Snackbar.LENGTH_SHORT).show()
             }
 
