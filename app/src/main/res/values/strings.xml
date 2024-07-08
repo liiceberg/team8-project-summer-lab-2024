@@ -5,15 +5,15 @@
     <string name="photo_of_eat">Photo of eat</string>
     <string name="recipe_name">Pepperoni pizza</string>
     <string name="recipe_description_placeholder">Quick and delicious homemade pizza, better than Dodo and other pizzerias!</string>
-    <string name="arrow_right">arrow right</string>
-    <string name="clear">clear</string>
+    <string name="arrow_right">Arrow right</string>
+    <string name="clear">Сlear</string>
     <string name="input_ingredients">Input ingredients</string>
     <string name="add">Add</string>
     <string name="cook">Cook</string>
     <string name="search_recipe">FInd recipe</string>
     <string name="recipes">Recipes</string>
-    <string name="app_name">CookUp</string>
-    <string name="name_of_recipe">name of recipe</string>
+    <string name="app_name" translatable="false">CookUp</string>
+    <string name="name_of_recipe">Name of recipe</string>
     <string name="description_of_recipe">description of recipe</string>
     <string name="instructions_of_recipe">instructions of recipe</string>
     <string name="favorites">Favorites</string>
@@ -22,4 +22,5 @@
     <string name="instructions">Instructions</string>
     <string name="product_list_hint">write product</string>
     <string name="add_to_products">add to products</string>
+    <string name="Create_new_recipe">Создание нового рецепта</string>
 </resources>

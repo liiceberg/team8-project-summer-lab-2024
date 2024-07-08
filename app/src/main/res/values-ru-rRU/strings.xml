@@ -13,4 +13,13 @@
     <string name="cook">Приготовить</string>
     <string name="search_recipe">"Найти "</string>
     <string name="recipes">Рецепты</string>
+    <string name="name_of_recipe">Название рецепта</string>
+    <string name="description_of_recipe">Описание рецепта</string>
+    <string name="instructions_of_recipe">Рецепт</string>
+    <string name="favorites">Избранные</string>
+    <string name="product_list">Список продуктов</string>
+    <string name="ingredients">Ингредиенты</string>
+    <string name="instructions">Рецепт</string>
+    <string name="product_list_hint">Впишите продукт</string>
+    <string name="Create_new_recipe">Создание нового рецепта</string>
 </resources>
