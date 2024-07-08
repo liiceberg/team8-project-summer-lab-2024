@@ -8,4 +8,5 @@
     <color name="back_color_cookup">#FBFEF9</color>
     <color name="dark_color_cookup">#3F3F3F</color>
     <color name="like_color">#F44336</color>
+    <color name="shadowedText">#79FFFFFF</color>
 </resources>

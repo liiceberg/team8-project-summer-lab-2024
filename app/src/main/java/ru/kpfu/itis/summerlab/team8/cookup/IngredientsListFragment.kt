@@ -29,7 +29,7 @@ class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
                 val item = inputTextView.text.toString()
 
                 if(item.isNotEmpty()) {
-                    ingList.add(item)
+                    ingList.add(item.trim())
                     expandableTextView.text = "${expandableTextView.text}-${inputTextView.text}\n"
                     inputTextView.setText("")
                 }
