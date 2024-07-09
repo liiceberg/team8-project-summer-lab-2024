@@ -7,7 +7,7 @@ import com.bumptech.glide.RequestManager
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeBinding
 
 class RecipeAdapter(
-    private val list: List<Recipe>,
+    private var list: List<Recipe>,
     private val glide: RequestManager,
     private val onClick: (Recipe) -> Unit,
 ) : RecyclerView.Adapter<RecipeHolder>() {
@@ -32,4 +32,8 @@ class RecipeAdapter(
         holder.onBind(list[position])
     }
 
+    fun updateData(newRecipes: List<Recipe>){
+        list = newRecipes
+        notifyDataSetChanged()
+    }
 }
