@@ -2,6 +2,7 @@ package ru.kpfu.itis.summerlab.team8.cookup.wordAdaptee
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -11,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.Recipe
@@ -57,21 +59,53 @@ class NewRecipeFragment : Fragment(R.layout.fragment_new_recipe) {
                 galleryLauncher.launch(Intent.createChooser(intent, "Выбрать изображение"))
             }
             saveButton.setOnClickListener{
-                val newRecipe = Recipe(
-                    id = 0,
-                    name = etName.text.toString(),
-                    urlImage = "urlAddress",
-                    description = etDescription.text.toString(),
-                    ingredients = wordAdapter!!.getCheckedText(),
-                    isFavourite = true,
-                    instructions = etInstructions.text.toString()
-                )
+                val name = etName.text.toString()
+                val description = etDescription.text.toString()
+                val ingredients = wordAdapter?.getCheckedText().toString()
+                val instructions = etInstructions.text.toString()
 
-                RecipeRepository.recipes.add(newRecipe)
-                lifecycleScope.launch{
-                    ServiceLocator.getDbInstance().recipeDao().insert(newRecipe)
+                var isValid = true
+
+                if(name.isEmpty()){
+                    etName.setBackgroundColor(Color.RED)
+                    isValid = false
+                } else {
+                    etName.setBackgroundColor(Color.TRANSPARENT)
                 }
-                findNavController().navigateUp()
+
+                if(description.isEmpty()){
+                    etDescription.setBackgroundColor(Color.RED)
+                    isValid = false
+                } else {
+                    etDescription.setBackgroundColor(Color.TRANSPARENT)
+                }
+
+                if(instructions.isEmpty()){
+                    etInstructions.setBackgroundColor(Color.RED)
+                    isValid = false
+                } else {
+                    etInstructions.setBackgroundColor(Color.TRANSPARENT)
+                }
+
+                if(isValid){
+                    val newRecipe = Recipe(
+                        id = 0,
+                        name = name,
+                        urlImage = "urlAddress",
+                        description = description,
+                        ingredients = ingredients,
+                        isFavourite = true,
+                        instructions = instructions
+                    )
+
+                    RecipeRepository.recipes.add(newRecipe)
+                    lifecycleScope.launch{
+                        ServiceLocator.getDbInstance().recipeDao().insert(newRecipe)
+                    }
+                    findNavController().navigateUp()
+                } else{
+                    Snackbar.make(saveButton, "Заполните рецепт полностью", Snackbar.LENGTH_SHORT).show()
+                }
             }
         }
     }
