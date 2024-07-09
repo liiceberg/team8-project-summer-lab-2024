@@ -2,6 +2,7 @@ package ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
+import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.Recipe
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeFeedBinding
 
@@ -14,7 +15,11 @@ class RecipeHolder(
         binding.run {
             textViewTitle.text = recipe.name
             textViewDescription.text = recipe.description
-            glide.load(recipe.urlImage).into(imageViewRecipe)
+            glide
+                .load(recipe.urlImage)
+                .error(R.drawable.logo_peach)
+                .placeholder(R.drawable.ic_autorenew)
+                .into(imageViewRecipe)
             root.setOnClickListener { click(recipe.id) }
         }
     }

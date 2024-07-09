@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         lifecycleScope.launch{
-            RecipeRepository.recipes = ServiceLocator.getDbInstance().recipeDao().getAll()
+            RecipeRepository.recipes = ServiceLocator.getDbInstance().recipeDao().getAll().toMutableList()
         }
 
         ProductsRepository.setProducts()

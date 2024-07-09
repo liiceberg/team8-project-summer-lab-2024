@@ -16,7 +16,7 @@ class RecipeHolder(
 
             glide
                 .load(recipe.urlImage)
-                .error(R.drawable.ic_android)
+                .error(R.drawable.logo_peach)
                 .placeholder(R.drawable.ic_autorenew)
                 .into(ivPhoto)
 

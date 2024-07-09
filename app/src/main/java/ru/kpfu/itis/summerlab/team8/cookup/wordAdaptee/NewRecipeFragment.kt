@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.launch
 import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.Recipe
+import ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentNewRecipeBinding
 import ru.kpfu.itis.summerlab.team8.cookup.di.ServiceLocator
 
@@ -65,6 +66,8 @@ class NewRecipeFragment : Fragment(R.layout.fragment_new_recipe) {
                     isFavourite = true,
                     instructions = etInstructions.text.toString()
                 )
+
+                RecipeRepository.recipes.add(newRecipe)
                 lifecycleScope.launch{
                     ServiceLocator.getDbInstance().recipeDao().insert(newRecipe)
                 }
