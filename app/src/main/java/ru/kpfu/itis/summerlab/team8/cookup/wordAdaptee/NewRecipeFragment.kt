@@ -97,7 +97,6 @@ class NewRecipeFragment : Fragment(R.layout.fragment_new_recipe) {
                         isFavourite = true,
                         instructions = instructions
                     )
-
                     RecipeRepository.recipes.add(newRecipe)
                     lifecycleScope.launch{
                         ServiceLocator.getDbInstance().recipeDao().insert(newRecipe)
