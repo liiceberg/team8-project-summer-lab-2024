@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/ingredientsListFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.IngredientsListFragment">
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.CookListFragment">
         <action
             android:id="@+id/action_ingredientsListFragment_to_recipeInfoFragment"
             app:destination="@id/recipeInfoFragment" />

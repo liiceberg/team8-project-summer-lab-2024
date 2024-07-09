@@ -2,16 +2,15 @@ package ru.kpfu.itis.summerlab.team8.cookup
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
-import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentIngredientsListBinding
+import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentCookListBinding
 
-class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
+class CookListFragment : Fragment(R.layout.fragment_cook_list) {
 
-    private var binding: FragmentIngredientsListBinding? = null
+    private var binding: FragmentCookListBinding? = null
     private var adapter: RecipeAdapter? = null
 
     private var ingList = mutableListOf<String>()
@@ -19,7 +18,7 @@ class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentIngredientsListBinding.bind(view)
+        binding = FragmentCookListBinding.bind(view)
 
         initRecipeAdapter()
 
@@ -55,7 +54,7 @@ class IngredientsListFragment : Fragment(R.layout.fragment_ingredients_list) {
         binding?.run {
             adapter = RecipeAdapter(
                 list = listOf(),
-                glide = Glide.with(this@IngredientsListFragment),
+                glide = Glide.with(this@CookListFragment),
                 onClick = {
                     val bundle = Bundle()
                     bundle.apply {
