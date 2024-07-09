@@ -29,19 +29,11 @@
         android:label="RecipeInfoFragment" />
 
     <fragment
-        android:id="@+id/recipeListFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.RecipeListFragment">
-        <action
-            android:id="@+id/action_recipeListFragment_to_recipeInfoFragment"
-            app:destination="@id/recipeInfoFragment" />
-    </fragment>
-
-    <fragment
         android:id="@+id/ingredientsListFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.IngredientsListFragment">
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.CookListFragment">
         <action
-            android:id="@+id/action_ingredientsListFragment_to_recipeListFragment"
-            app:destination="@id/recipeListFragment" />
+            android:id="@+id/action_ingredientsListFragment_to_recipeInfoFragment"
+            app:destination="@id/recipeInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteRecipesFragment"

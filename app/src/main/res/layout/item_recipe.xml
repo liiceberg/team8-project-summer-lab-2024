@@ -32,6 +32,7 @@
                 android:id="@+id/ivPhoto"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toTopOf="@+id/tvNameRecipe"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
