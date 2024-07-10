@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed
+package ru.kpfu.itis.summerlab.team8.cookup.recipeFeed
 
 import android.os.Bundle
 import android.view.View
@@ -8,8 +8,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import ru.kpfu.itis.summerlab.team8.cookup.R
-import ru.kpfu.itis.summerlab.team8.cookup.Recipe
-import ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.Recipe
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.RecipeRepository
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentFeedBinding
 
 
@@ -18,7 +18,7 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
     private lateinit var allRecipes: List<Recipe>
 
     private var binding: FragmentFeedBinding? = null
-    private var adapter: RecipeAdapter? = null
+    private var adapter: RecipeFeedAdapter? = null
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,8 +52,8 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
 
 
     private fun initAdapter() {
-        adapter = RecipeAdapter(RecipeRepository.recipes, Glide.with(this), click = {
-            id -> var bundle = Bundle()
+        adapter = RecipeFeedAdapter(RecipeRepository.recipes, Glide.with(this), click = {
+            id -> val bundle = Bundle()
             bundle.putLong("id",id)
             findNavController().navigate(resId = R.id.action_feedFragment_to_recipeInfoFragment, args = bundle)
         })

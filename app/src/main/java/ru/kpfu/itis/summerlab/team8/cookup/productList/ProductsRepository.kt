@@ -1,11 +1,10 @@
-package ru.kpfu.itis.summerlab.team8.cookup.ProductList
+package ru.kpfu.itis.summerlab.team8.cookup.productList
 
 import android.content.Context
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import com.github.doyaaaaaken.kotlincsv.dsl.csvWriter
 import java.io.File
 import java.io.IOException
-import java.io.PrintWriter
 
 
 object ProductsRepository {

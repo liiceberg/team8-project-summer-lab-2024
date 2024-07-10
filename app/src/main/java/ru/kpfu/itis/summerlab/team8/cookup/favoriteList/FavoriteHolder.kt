@@ -1,24 +1,26 @@
-package ru.kpfu.itis.summerlab.team8.cookup
+package ru.kpfu.itis.summerlab.team8.cookup.favoriteList
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.RequestManager
-import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeBinding
+import ru.kpfu.itis.summerlab.team8.cookup.R
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.Recipe
+import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeFeedBinding
 
-class RecipeHolder(
-    private val binding: ItemRecipeBinding,
+class FavoriteHolder(
+    private val binding: ItemRecipeFeedBinding,
     private val glide: RequestManager,
     private val onClick: (Recipe) -> Unit,
 ) : ViewHolder(binding.root) {
 
     fun onBind(recipe: Recipe) {
         binding.run {
-            tvNameRecipe.text = recipe.name
-
+            textViewTitle.text = recipe.name
+            textViewDescription.text = recipe.description
             glide
                 .load(recipe.urlImage)
                 .error(R.drawable.logo_peach)
                 .placeholder(R.drawable.ic_autorenew)
-                .into(ivPhoto)
+                .into(imageViewRecipe)
 
             root.setOnClickListener {
                 onClick.invoke(recipe)

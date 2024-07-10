@@ -1,17 +1,14 @@
 <resources>
-    <string name="titleFeed">Recipes</string>
-    <string name="AddRecipe">Add</string>
     <string name="search">Search</string>
     <string name="photo_of_eat">Photo of eat</string>
     <string name="recipe_name">Pepperoni pizza</string>
     <string name="recipe_description_placeholder">Quick and delicious homemade pizza, better than Dodo and other pizzerias!</string>
     <string name="arrow_right">Arrow right</string>
-    <string name="clear">Сlear</string>
-    <string name="input_ingredients">Input ingredients</string>
+    <string name="clear">clear</string>
     <string name="add">Add</string>
     <string name="cook">Cook</string>
-    <string name="search_recipe">FInd recipe</string>
-    <string name="recipes">Recipes</string>
+    <string name="search_recipe">Find recipe</string>
+    <string name="recipes_title">Recipes</string>
     <string name="app_name" translatable="false">CookUp</string>
     <string name="name_of_recipe">Name of recipe</string>
     <string name="description_of_recipe">description of recipe</string>
@@ -22,13 +19,8 @@
     <string name="instructions">Instructions</string>
     <string name="product_list_hint">write product</string>
     <string name="add_to_products">add to products</string>
-    <string name="Create_new_recipe">Создание нового рецепта</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
-    <string name="app_widget_description">This is an app widget description</string>
-    <string name="ingredients_title">Ингредиенты</string>
-    <string name="write_ingredients">Введите ингредиенты</string>
-    <string name="write_ingredient">Введите ингредиент</string>
-    <string name="save_recipe">Сохранить рецепт</string>
-    <string name="choose_image">Выбрать изображение</string>
+    <string name="Create_new_recipe">Create new recipe</string>
+    <string name="write_ingredients">Write ingredients</string>
+    <string name="save_recipe">Save recipe</string>
+    <string name="choose_image">Choose image</string>
 </resources>

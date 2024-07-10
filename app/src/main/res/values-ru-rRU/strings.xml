@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="titleFeed">Рецепты</string>
-    <string name="AddRecipe">Добавить</string>
+    <string name="write_ingredients">Введите ингредиенты</string>
+    <string name="save_recipe">Сохранить рецепт</string>
+    <string name="choose_image">Выбрать изображение</string>
     <string name="search">Поиск</string>
     <string name="photo_of_eat">Фото еды</string>
     <string name="recipe_name">Пицца пепперони</string>
     <string name="recipe_description_placeholder">Быстрая и вкусная пицца своими руками, лучше чем в Додо и других пиццериях!</string>
     <string name="arrow_right">Стрелка вправо</string>
     <string name="clear">Очистить</string>
-    <string name="input_ingredients">Вставьте ингредиенты</string>
     <string name="add">Добавить</string>
     <string name="cook">Приготовить</string>
     <string name="search_recipe">"Найти "</string>
-    <string name="recipes">Рецепты</string>
     <string name="name_of_recipe">Название рецепта</string>
     <string name="description_of_recipe">Описание рецепта</string>
     <string name="instructions_of_recipe">Рецепт</string>
@@ -21,5 +20,7 @@
     <string name="ingredients">Ингредиенты</string>
     <string name="instructions">Рецепт</string>
     <string name="product_list_hint">Впишите продукт</string>
+    <string name="add_to_products">добавить в список</string>
     <string name="Create_new_recipe">Создание нового рецепта</string>
+    <string name="recipes_title">Рецепты</string>
 </resources>

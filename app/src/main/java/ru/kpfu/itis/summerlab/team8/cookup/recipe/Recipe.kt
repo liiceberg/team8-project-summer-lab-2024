@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team8.cookup
+package ru.kpfu.itis.summerlab.team8.cookup.recipe
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

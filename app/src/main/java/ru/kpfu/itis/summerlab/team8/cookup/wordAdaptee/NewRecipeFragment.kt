@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 import ru.kpfu.itis.summerlab.team8.cookup.R
-import ru.kpfu.itis.summerlab.team8.cookup.Recipe
-import ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.Recipe
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.RecipeRepository
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentNewRecipeBinding
 import ru.kpfu.itis.summerlab.team8.cookup.di.ServiceLocator
 

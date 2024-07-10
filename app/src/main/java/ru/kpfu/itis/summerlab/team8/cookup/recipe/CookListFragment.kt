@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team8.cookup
+package ru.kpfu.itis.summerlab.team8.cookup.recipe
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
+import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentCookListBinding
 
 class CookListFragment : Fragment(R.layout.fragment_cook_list) {
@@ -58,7 +59,7 @@ class CookListFragment : Fragment(R.layout.fragment_cook_list) {
                 onClick = {
                     val bundle = Bundle()
                     bundle.apply {
-                        bundle.putLong("id", it.id);
+                        bundle.putLong("id", it.id)
                     }
                     findNavController().navigate(
                         R.id.action_ingredientsListFragment_to_recipeInfoFragment,

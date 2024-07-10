@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team8.cookup
+package ru.kpfu.itis.summerlab.team8.cookup.recipe
 
 import android.os.Bundle
 import android.view.View
@@ -8,8 +8,9 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
-import ru.kpfu.itis.summerlab.team8.cookup.ProductList.Product
-import ru.kpfu.itis.summerlab.team8.cookup.ProductList.ProductsRepository
+import ru.kpfu.itis.summerlab.team8.cookup.productList.Product
+import ru.kpfu.itis.summerlab.team8.cookup.productList.ProductsRepository
+import ru.kpfu.itis.summerlab.team8.cookup.R
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentRecipeInfoBinding
 import ru.kpfu.itis.summerlab.team8.cookup.di.ServiceLocator
 
@@ -26,11 +27,12 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
             if (recipe != null) {
                 title.text = recipe.name
                 description.text = recipe.description
-                ingredients.text = recipe.ingredients.split(",").map { ing -> "-${ing.trim()}" }.joinToString("\n")
+                ingredients.text =
+                    recipe.ingredients.split(",").joinToString("\n") { ing -> "-${ing.trim()}" }
                 instructions.text = recipe.instructions
                 Glide.with(view)
                     .load(recipe.urlImage)
-                    .error(R.drawable.ic_android)
+                    .error(R.drawable.logo_peach)
                     .placeholder(R.drawable.ic_autorenew)
                     .into(recipeImage)
                 println(id)

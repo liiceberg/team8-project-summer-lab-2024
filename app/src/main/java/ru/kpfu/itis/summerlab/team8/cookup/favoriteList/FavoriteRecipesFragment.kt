@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team8.cookup.FavoriteList
+package ru.kpfu.itis.summerlab.team8.cookup.favoriteList
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import ru.kpfu.itis.summerlab.team8.cookup.R
-import ru.kpfu.itis.summerlab.team8.cookup.Recipe
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.Recipe
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.FragmentFavoriteRecipesBinding
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.RecipeRepository
 
 class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
 
@@ -24,9 +25,9 @@ class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
         initAdapter()
 
         favoriteRecipes =
-            ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.isFavourite }
+            RecipeRepository.recipes.filter { it.isFavourite }
 
-        binding?.run {
+        binding.run {
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     query?.let { performSearch(it) }
@@ -50,14 +51,14 @@ class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
     }
 
     private fun initAdapter() {
-        binding?.run {
+        binding.run {
             adapter = FavoriteAdapter(
-                list = ru.kpfu.itis.summerlab.team8.cookup.RecipeRepository.recipes.filter { it.isFavourite },
+                list = RecipeRepository.recipes.filter { it.isFavourite },
                 glide = Glide.with(this@FavoriteRecipesFragment),
                 onClick = {
                     val bundle = Bundle()
                     bundle.apply {
-                        bundle.putLong("id", it.id);
+                        bundle.putLong("id", it.id)
                     }
                     findNavController().navigate(
                         R.id.action_favoriteRecipesFragment_to_recipeInfoFragment,
@@ -68,9 +69,5 @@ class FavoriteRecipesFragment : Fragment(R.layout.fragment_favorite_recipes) {
             rvRecipes.adapter = adapter
             rvRecipes.layoutManager = LinearLayoutManager(requireContext())
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
     }
 }
