@@ -21,7 +21,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
 
         binding?.apply {
             toolBar.setOnMenuItemClickListener {
-                ProductsRepository.clear()
+                ProductsRepository.clear(requireContext())
                 rvProductList.adapter?.notifyDataSetChanged()
                 false
             }

@@ -50,7 +50,7 @@ class NewRecipeFragment : Fragment(R.layout.fragment_new_recipe) {
                 val word = editText.text.toString()
                 if (word.isNotEmpty()) {
                     wordList.add(word)
-                    wordAdapter?.notifyItemChanged(wordList.size-1)
+                    wordAdapter?.notifyDataSetChanged()
                     editText.setText("")
                 }
             }

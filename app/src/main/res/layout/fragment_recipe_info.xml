@@ -122,10 +122,13 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/description"
                     android:layout_marginStart="16dp"
-                    android:layout_toRightOf="@id/ingredients_title"
+                    android:layout_toEndOf="@id/ingredients_title"
                     android:backgroundTint="@color/back_color_cookup"
+                    android:elevation="24dp"
                     android:text="@string/add_to_products"
-                    android:textColor="#8A3F3F3F" />
+                    android:textColor="@color/dark_color_cookup"
+                    app:strokeColor="@color/primary_color_cookup"
+                    app:strokeWidth="1dp" />
 
                 <TextView
                     android:id="@+id/ingredients"
