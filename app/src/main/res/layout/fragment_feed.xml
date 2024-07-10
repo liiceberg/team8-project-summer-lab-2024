@@ -13,6 +13,7 @@
         android:background="@color/primary_color_cookup"
         android:iconifiedByDefault="false"
         android:paddingVertical="10dp"
+        android:paddingStart="0dp"
         android:paddingEnd="32dp"
         android:queryHint="Поиск рецептов"
         app:layout_constraintEnd_toStartOf="@+id/rvRecipes"

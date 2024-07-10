@@ -63,7 +63,7 @@ class RecipeInfoFragment : Fragment(R.layout.fragment_recipe_info) {
             }
 
             addToProductsButton.setOnClickListener{
-                ProductsRepository.add(ingredients.text.split("\n").map { product -> Product(product.replace("-", "").trim(), false) })
+                ProductsRepository.add(ingredients.text.split("\n").filter { str -> str != "" }.map { product -> Product(product.replace("-", "").trim(), false)})
                 Snackbar.make(view, "ingredients added to list", Snackbar.LENGTH_SHORT).show()
             }
 

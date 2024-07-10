@@ -35,7 +35,7 @@ object ProductsRepository {
 
     fun add(products: List<Product>){
         this.products.addAll(products)
-        csvWriter().writeAll(products.map { product -> listOf(product.name, product.isChecked.toString()) }, file!!, append = true)
+        csvWriter().writeAll(products.map { product -> listOf(product.name, product.isChecked) }, file!!, append = true)
     }
 
     fun add(product: Product){
@@ -49,9 +49,10 @@ object ProductsRepository {
         csvWriter().writeAll(products.map { product -> listOf(product.name, product.isChecked.toString()) }, file!!)
     }
 
-    fun clear(){
+    fun clear(context : Context){
         products.clear()
-        val writer = PrintWriter(file!!)
-        writer.print("")
+        val file = File(context.filesDir, "products.csv")
+        file.delete()
+        checkAndCreateFile(context)
     }
 }

@@ -23,4 +23,12 @@
     <string name="product_list_hint">write product</string>
     <string name="add_to_products">add to products</string>
     <string name="Create_new_recipe">Создание нового рецепта</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="ingredients_title">Ингредиенты</string>
+    <string name="write_ingredients">Введите ингредиенты</string>
+    <string name="write_ingredient">Введите ингредиент</string>
+    <string name="save_recipe">Сохранить рецепт</string>
+    <string name="choose_image">Выбрать изображение</string>
 </resources>
