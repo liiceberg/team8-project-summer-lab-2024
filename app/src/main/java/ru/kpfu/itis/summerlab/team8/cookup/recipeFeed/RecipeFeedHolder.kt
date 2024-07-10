@@ -1,12 +1,12 @@
-package ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed
+package ru.kpfu.itis.summerlab.team8.cookup.recipeFeed
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import ru.kpfu.itis.summerlab.team8.cookup.R
-import ru.kpfu.itis.summerlab.team8.cookup.Recipe
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.Recipe
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeFeedBinding
 
-class RecipeHolder(
+class RecipeFeedHolder(
     private val glide: RequestManager,
     private val binding: ItemRecipeFeedBinding,
     private val click: (Long) -> Unit

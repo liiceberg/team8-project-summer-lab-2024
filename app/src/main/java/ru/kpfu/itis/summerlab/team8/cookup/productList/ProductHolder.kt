@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team8.cookup.ProductList
+package ru.kpfu.itis.summerlab.team8.cookup.productList
 
 import android.graphics.Paint
 import androidx.recyclerview.widget.RecyclerView.ViewHolder

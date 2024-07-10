@@ -1,7 +1,7 @@
 package ru.kpfu.itis.summerlab.team8.cookup
 
 import android.app.Application
-import ru.kpfu.itis.summerlab.team8.cookup.ProductList.ProductsRepository
+import ru.kpfu.itis.summerlab.team8.cookup.productList.ProductsRepository
 import ru.kpfu.itis.summerlab.team8.cookup.di.ServiceLocator
 
 

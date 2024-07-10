@@ -1,35 +1,33 @@
-package ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed
+package ru.kpfu.itis.summerlab.team8.cookup.favoriteList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
-import ru.kpfu.itis.summerlab.team8.cookup.Recipe
+import ru.kpfu.itis.summerlab.team8.cookup.recipe.Recipe
 import ru.kpfu.itis.summerlab.team8.cookup.databinding.ItemRecipeFeedBinding
 
-class RecipeAdapter(
+class FavoriteAdapter(
     private var list: List<Recipe>,
     private val glide: RequestManager,
-    private val click: (Long) -> Unit
-) : RecyclerView.Adapter<RecipeHolder>() {
-
+    private val onClick: (Recipe) -> Unit,
+) : RecyclerView.Adapter<FavoriteHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RecipeHolder = RecipeHolder(
-        glide,
-        ItemRecipeFeedBinding.inflate(
+    ): FavoriteHolder = FavoriteHolder(
+        binding = ItemRecipeFeedBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
-        ), click
+        ),
+        glide = glide,
+        onClick = onClick,
     )
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
+    override fun getItemCount(): Int = list.size
 
-    override fun onBindViewHolder(holder: RecipeHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavoriteHolder, position: Int) {
         holder.onBind(list[position])
     }
 
@@ -37,6 +35,5 @@ class RecipeAdapter(
         list = newRecipes
         notifyDataSetChanged()
     }
-
 
 }

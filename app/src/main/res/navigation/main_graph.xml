@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.RecipeFeed.FeedFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.recipeFeed.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
         <action
@@ -20,24 +20,24 @@
 
     <fragment
         android:id="@+id/productListFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.ProductList.ProductListFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.productList.ProductListFragment"
         android:label="ProductListFragment" />
 
     <fragment
         android:id="@+id/recipeInfoFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.RecipeInfoFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.recipe.RecipeInfoFragment"
         android:label="RecipeInfoFragment" />
 
     <fragment
         android:id="@+id/ingredientsListFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.CookListFragment">
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.recipe.CookListFragment">
         <action
             android:id="@+id/action_ingredientsListFragment_to_recipeInfoFragment"
             app:destination="@id/recipeInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteRecipesFragment"
-        android:name="ru.kpfu.itis.summerlab.team8.cookup.FavoriteList.FavoriteRecipesFragment"
+        android:name="ru.kpfu.itis.summerlab.team8.cookup.favoriteList.FavoriteRecipesFragment"
         android:label="fragment_favorite_recipes"
         tools:layout="@layout/fragment_favorite_recipes">
         <action

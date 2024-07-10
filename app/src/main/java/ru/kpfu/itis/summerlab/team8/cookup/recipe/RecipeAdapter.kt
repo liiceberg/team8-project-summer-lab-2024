@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team8.cookup
+package ru.kpfu.itis.summerlab.team8.cookup.recipe
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

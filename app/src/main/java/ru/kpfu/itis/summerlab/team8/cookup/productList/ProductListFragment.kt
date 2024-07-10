@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team8.cookup.ProductList
+package ru.kpfu.itis.summerlab.team8.cookup.productList
 
 import android.os.Bundle
 import android.view.View
@@ -52,7 +52,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
         ProductsRepository.update()
     }
 
-    fun initAdapter() {
+    private fun initAdapter() {
         binding?.apply {
             rvProductList.adapter = ProductAdapter(
                 list = ProductsRepository.products
